@@ -20,8 +20,8 @@ html, body {
 
 /* Container for the app */
 #app {
-    width: 80vw;  /* 90% of the screen width */
-    height: 80vh;  /* 90% of the screen height */
+    width: 80vw;  /* 80% of the screen width */
+    height: 80vh;  /* 80% of the screen height */
     padding: 4vw;  /* Padding relative to screen width */
     background-color: rgba(0, 0, 0, 0.7); /* Dark translucent background */
     border-radius: 2vw;  /* Border radius relative to screen width */
@@ -36,7 +36,7 @@ html, body {
 /* Styling for the dice selection buttons */
 .dice-selection {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Adjust layout for PC */
     gap: 2vw;  /* Gap between buttons relative to screen width */
     padding: 2vw;  /* Padding relative to screen width */
 }
@@ -93,9 +93,53 @@ html, body {
     overflow-wrap: break-word;  /* Ensure long numbers or text wrap */
     text-align: center;  /* Center text for better presentation */
     max-width: 100%; /* Ensure the text doesn't stretch the container */
-    overflow-x: auto; /* Enable horizontal scrolling if content overflows */
 }
 
+/* Media Queries for Large Screens (PC Landscape) */
+@media (min-width: 768px) {
+    #app {
+        width: 60vw;  /* Adjust width for larger screens */
+        height: 70vh;  /* Adjust height for larger screens */
+    }
+
+    .dice-selection {
+        grid-template-columns: repeat(4, 1fr); /* More buttons per row */
+        gap: 2vw;
+    }
+
+    .dice-selection button {
+        padding: 2vw;  /* Smaller padding on larger screens */
+        font-size: 2.5vw;  /* Smaller font size on larger screens */
+    }
+
+    #total {
+        font-size: 15vh;  /* Adjust font size for larger screens */
+    }
+
+    #individualResults {
+        font-size: 2vw;  /* Adjust font size for larger screens */
+    }
+}
+
+/* Media Queries for Small Screens (Mobile Portrait) */
+@media (max-width: 767px) {
+    .dice-selection {
+        grid-template-columns: repeat(2, 1fr);  /* Less buttons per row */
+    }
+
+    .dice-selection button {
+        padding: 4vw;  /* Larger padding for mobile screens */
+        font-size: 5vw;  /* Larger font size for mobile screens */
+    }
+
+    #total {
+        font-size: 20vh;  /* Larger font size for mobile screens */
+    }
+
+    #individualResults {
+        font-size: 4vw;  /* Larger font size for mobile screens */
+    }
+}
 
     </style>
 </head>
