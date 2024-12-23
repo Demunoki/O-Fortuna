@@ -11,7 +11,7 @@ const diceConfig = {
 
 for (const dieType in diceConfig) {
     const config = diceConfig[dieType];
-    config.previous = Array(config.numRolls).fill(config.targetAverage);
+    config.previous = Array(config.numRolls-1).fill(config.targetAverage);
 }
     function getARandom(dieType){
         const config=diceConfig[dieType]
