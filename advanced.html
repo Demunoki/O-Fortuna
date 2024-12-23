@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roll Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f9;
+        }
+        #app {
+            width: 100%;
+            max-width: 400px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .dice-selection {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .line {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .line span {
+            font-weight: bold;
+            flex: 1;
+            text-align: left;
+        }
+        .controls {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .dice-count {
+            width: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        #rollButton {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        #results {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .individual-results {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        #total {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+          #advanced-mode-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Dice Roll Generator</h1>
+
+        <!-- Die Selection -->
+        <div class="dice-selection">
+            <div class="line">
+                <span>d4</span>
+                <div class="controls">
+                    <button onclick="adjustDiceCount('d4', -1)">-</button>
+                    <input type="number" id="d4Count" class="dice-count" value="0" min="1" onchange="validateDiceCount('d4')">
+                    <button onclick="adjustDiceCount('d4', 1)">+</button>
+                </div>
+            </div>
+            <div class="line">
+                <span>d6</span>
+                <div class="controls">
+                    <button onclick="adjustDiceCount('d6', -1)">-</button>
+                    <input type="number" id="d6Count" class="dice-count" value="0" min="1" onchange="validateDiceCount('d6')">
+                    <button onclick="adjustDiceCount('d6', 1)">+</button>
+                </div>
+            </div>
+            <div class="line">
+                <span>d8</span>
+                <div class="controls">
+                    <button onclick="adjustDiceCount('d8', -1)">-</button>
+                    <input type="number" id="d8Count" class="dice-count" value="0" min="1" onchange="validateDiceCount('d8')">
+                    <button onclick="adjustDiceCount('d8', 1)">+</button>
+                </div>
+            </div>
+            <div class="line">
+                <span>d10</span>
+                <div class="controls">
+                    <button onclick="adjustDiceCount('d10', -1)">-</button>
+                    <input type="number" id="d10Count" class="dice-count" value="0" min="1" onchange="validateDiceCount('d10')">
+                    <button onclick="adjustDiceCount('d10', 1)">+</button>
+                </div>
+            </div>
+            <div class="line">
+                <span>d12</span>
+                <div class="controls">
+                    <button onclick="adjustDiceCount('d12', -1)">-</button>
+                    <input type="number" id="d12Count" class="dice-count" value="0" min="1" onchange="validateDiceCount('d12')">
+                    <button onclick="adjustDiceCount('d12', 1)">+</button>
+                </div>
+            </div>
+            <div class="line">
+                <span>d20</span>
+                <div class="controls">
+                    <button onclick="adjustDiceCount('d20', -1)">-</button>
+                    <input type="number" id="d20Count" class="dice-count" value="0" min="1" onchange="validateDiceCount('d20')">
+                    <button onclick="adjustDiceCount('d20', 1)">+</button>
+                </div>
+            </div>
+            <div class="line">
+                <span>d100</span>
+                <div class="controls">
+                    <button onclick="adjustDiceCount('d100', -1)">-</button>
+                    <input type="number" id="d100Count" class="dice-count" value="0" min="1" onchange="validateDiceCount('d100')">
+                    <button onclick="adjustDiceCount('d100', 1)">+</button>
+                </div>
+            </div>
+            <div class="line">
+                <span>Bonus</span>
+                <div class="controls">
+                    <button onclick="adjustBonus(-1)">-</button>
+                    <input type="number" id="bonus" class="dice-count" value="0">
+                    <button onclick="adjustBonus(1)">+</button>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Roll Button -->
+        <button id="rollButton" onclick="rollAllDice()">ROLL!</button>
+
+        <!-- Results -->
+        <div id="results">
+            <div id="individualResults" class="individual-results"></div>
+            <div id="total"></div>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>    
+    <script src="script.js"></script>
+</body>
+</html>
