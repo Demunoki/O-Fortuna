@@ -1,11 +1,11 @@
 const diceConfig = {
-    4: { numRolls: 5, targetAverage: 2.5,previous:[] },
-    6: { numRolls: 5, targetAverage: 3.5,previous:[] },
-    8: { numRolls: 5, targetAverage: 4.5,previous:[] },
-    10: { numRolls: 5, targetAverage: 5.5,previous:[] },
-    12: { numRolls: 5, targetAverage: 6.5 ,previous:[]},
-    20: { numRolls: 5, targetAverage: 10.5,previous:[] },
-    100: { numRolls: 5, targetAverage: 50.5,previous:[] }
+    4: { numRolls: 5, targetAverage: 0.5,previous:[] },
+    6: { numRolls: 5, targetAverage: 1.5,previous:[] },
+    8: { numRolls: 5, targetAverage: 2.5,previous:[] },
+    10: { numRolls: 5, targetAverage: 3.5,previous:[] },
+    12: { numRolls: 5, targetAverage: 4.5 ,previous:[]},
+    20: { numRolls: 5, targetAverage: 8.5,previous:[] },
+    100: { numRolls: 5, targetAverage: 48.5,previous:[] }
 };
 
 
