@@ -1,0 +1,14 @@
+{
+    "name": "o-fortuna",
+    "title": "O Fortuna!",
+    "description": "velut luna statu variabilis semper crescis aut decrescis vita detestabilis nunc obdurat et tunc curat ludo mentis aciem, egestatem, potestatem dissolvit ut glaciem.",
+    "authors": [
+        {"name": "Dominic Locks"},
+        {"name": "Maximilian Schön"}
+    ],
+    "version": "1",
+    "minimumCoreVersion": "12.331",
+    "scripts": [
+        "scripts/script.js"
+    ]
+}
