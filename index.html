@@ -14,16 +14,14 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('https://www.w3schools.com/w3images/wood.jpg'); /* Example parchment-style background */
-    background-size: cover;
-    background-position: center;
-    color: #f4f4f9;
+    background-color: #ffffff;  /* White background */
+    color: #333333;  /* Dark text color for contrast */
 }
 
 /* Container for the app */
 #app {
-    width: 300px;  /* Fixed width */
-    height: 500px;  /* Fixed height */
+    width: 80vw;  /* 90% of the screen width */
+    height: 80vh;  /* 90% of the screen height */
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.7); /* Dark translucent background */
     border-radius: 10px;
@@ -67,7 +65,6 @@ html, body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-
 /* Results section */
 #results {
     display: flex;
@@ -80,15 +77,15 @@ html, body {
 }
 
 #total {
-    font-size: 100px;
+    font-size: 25vh;
     font-weight: bold;
-    color: #A52A2A;
+    color: #ffcc00;
     margin-bottom: 10px;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
 }
 
 #individualResults {
-    font-size: 10px;  /* Smaller font size to avoid overflow */
+    font-size: 2vh;  /* Smaller font size to avoid overflow */
     color: #f4f4f9;
     white-space: pre-wrap;
     line-height: 1.5;
