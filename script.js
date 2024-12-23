@@ -22,7 +22,7 @@ function rollDice(dieType) {
     // Continue generating random numbers until the average is above the target
     do {
         randomNumber = Math.floor(Math.random() * dieType) + 1;
-        average=config.previous.reduce((a, b) => a + b, 0)+randomNumber/config.numRolls;
+        average=(config.previous.reduce((a, b) => a + b, 0)+randomNumber)/config.numRolls;
         // If the average is below the target, reroll
     } while (average < config.targetAverage);
     config.previous.shift()
