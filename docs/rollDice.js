@@ -8,16 +8,17 @@ const diceConfig = {
     100: { numRolls: 5, targetAverage: 50.5,previous:[] }
 };
 
-
+function setup(){
 for (const dieType in diceConfig) {
     const config = diceConfig[dieType];
     config.previous = Array(config.numRolls-1).fill(config.targetAverage);
-}
-    function getARandom(dieType){
-        const config=diceConfig[dieType]
-        const randomNumber = Math.floor(Math.random() * dieType) + 1;
-        const average=(config.previous.reduce((a, b) => a + b, 0)+randomNumber)/config.numRolls;
-        return {randomNumber,average}}
+}}
+
+function getARandom(dieType){
+    const config=diceConfig[dieType]
+    const randomNumber = Math.floor(Math.random() * dieType) + 1;
+    const average=(config.previous.reduce((a, b) => a + b, 0)+randomNumber)/config.numRolls;
+    return {randomNumber,average}}
 
 function rollDice(dieType) {
     const config = diceConfig[dieType];
@@ -27,6 +28,5 @@ function rollDice(dieType) {
     }
     config.previous.shift()
     config.previous.push(randomNumber)
-    document.getElementById('total').innerHTML=`<strong> ${randomNumber}</strong>`
-    document.getElementById('individualResults').innerHTML = 
-    `<strong>Last ${config.numRolls} Numbers:</strong> ${config.previous.join(', ')} <br> <strong>Average:</strong> ${average.toFixed(2)}`;}
+    return {randomNumber: randomNumber,config: config, average: average}
+}

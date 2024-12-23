@@ -1,0 +1,20 @@
+{
+  "title": "Dummies's TokenBar",
+  "description": "Add a bar with all the current player tokens.  Limit movement, roll saving throws, assign XP.",
+  "version": "12.04",
+  "url": "https://github.com/ironmonk88/monks-tokenbar",
+  "download": "https://github.com/ironmonk88/monks-tokenbar/archive/12.04.zip",
+  "manifest": "https://github.com/ironmonk88/monks-tokenbar/releases/latest/download/module.json",
+  "bugs": "https://github.com/ironmonk88/monks-tokenbar/issues",
+  "id": "o-fortuna",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12"
+  },
+  "name": "monks-tokenbar",
+  "minimumCoreVersion": "12",
+  "compatibleCoreVersion": "12",
+  "flags": {
+    "allowBugReporter": true
+  }
+}
