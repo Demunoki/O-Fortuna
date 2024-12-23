@@ -2,82 +2,79 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dice Roll Generator</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f9;
-        }
+       html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
 
-        #app {
-            position: relative;
-            width: 300px;
-            height: 300px;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
 
-        h1 {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-        }
+#app {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
 
-        .dice-selection {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            /* add this */
-            justify-content: space-around;
-            /* add this */
-        }
+.dice-selection {
+    display: grid;
+    justify-content: center;
+    margin-top: auto;
+    grid-template-columns: repeat(2, 1fr);  /* Create two equal-width columns */
+    gap: 10px;                             /* Space between buttons */
+    padding: 10px;
+}
 
-        .dice-selection button {
-            width: 100%;
-            /* add this */
-            padding: 10px 20px;
-            font-size: 18px;
-            cursor: pointer;
-            background-color: #4caf50;
-            margin-bottom: 10px;
-            color: white;
-            border: none;
-            border-radius: 8px;
-        }
+.dice-selection button {
+    width: 100%; /* Make buttons span the entire width */
+    padding: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #4caf50;
+    margin: 5px 0; /* Space between buttons */
+    color: white;
+    border: none;
+    border-radius: 8px;
+}
+#results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
 
-        #results {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
+#total {
+    font-size: 80px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
 
-        #total {
-            font-size: 80px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
-        }
+#individualResults{
+    justify-content: center;  /* Horizontal centering */
+}
 
-        #individualResults {
-            font-size: 8px;
-            color: #555;
-        }
     </style>
 </head>
 
 <body>
+    
     <div id="app">
-        <div id="results"> <div id="total"></div>
-    </div>
+        
+        <!-- Results -->
+        <div id="results">
+            <div id="total"></div>
+            <div id="individualResults"></div>
+        </div>
 
         <!-- Die Selection -->
         <div class="dice-selection">
@@ -90,11 +87,6 @@
             <button onclick="rollDice(100)">d100</button>
         </div>
 
-
-        <!-- Results -->
-        <div id="results">
-            <div id="individualResults" class="individual-results"></div>
-        </div>
     </div>
     <script src="script.js"></script>
 </body>
