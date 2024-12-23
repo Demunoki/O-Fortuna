@@ -16,7 +16,7 @@ for (const dieType in diceConfig) {
     function getARandom(dieType){
         const config=diceConfig[dieType]
         const randomNumber = Math.floor(Math.random() * dieType) + 1;
-        const average=(config.previous.reduce((a, b) => a + b, 0)+randomNumber)/config.numRolls;
+        const average=(config.previous.slice(1).reduce((a, b) => a + b, 0)+randomNumber)/config.numRolls;
         return {randomNumber,average}}
 
 function rollDice(dieType) {
