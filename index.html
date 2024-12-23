@@ -36,7 +36,6 @@ html, body {
 /* Styling for the dice selection buttons */
 .dice-selection {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Adjust layout for PC */
     gap: 2vw;  /* Gap between buttons relative to screen width */
     padding: 2vw;  /* Padding relative to screen width */
 }
@@ -71,7 +70,6 @@ html, body {
     flex-direction: column;
     align-items: center;
     padding: 2vw;  /* Padding relative to screen width */
-    margin-bottom: 4vw;  /* Margin at the bottom relative to screen height */
     width: 100%;         /* Ensure results take up full width */
     overflow: hidden;    /* Hide overflow */
 }
@@ -103,17 +101,17 @@ html, body {
     }
 
     .dice-selection {
-        grid-template-columns: repeat(4, 1fr); /* More buttons per row */
-        gap: 2vw;
+        grid-template-columns: repeat(3, 1fr); /* Adjust layout for PC */
+        gap: 1vw;
     }
 
     .dice-selection button {
-        padding: 2vw;  /* Smaller padding on larger screens */
-        font-size: 2.5vw;  /* Smaller font size on larger screens */
+        padding: 1vw;  /* Smaller padding on larger screens */
+        font-size: 2vw;  /* Smaller font size on larger screens */
     }
 
     #total {
-        font-size: 15vh;  /* Adjust font size for larger screens */
+        font-size: 10vh;  /* Adjust font size for larger screens */
     }
 
     #individualResults {
