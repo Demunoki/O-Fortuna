@@ -22,10 +22,10 @@ html, body {
 #app {
     width: 80vw;  /* 90% of the screen width */
     height: 80vh;  /* 90% of the screen height */
-    padding: 20px;
+    padding: 4vw;  /* Padding relative to screen width */
     background-color: rgba(0, 0, 0, 0.7); /* Dark translucent background */
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 2vw;  /* Border radius relative to screen width */
+    box-shadow: 0 1vw 4vw rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: space-between;  /* Keep buttons and results fixed in place */
@@ -37,22 +37,22 @@ html, body {
 .dice-selection {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 10px;
+    gap: 2vw;  /* Gap between buttons relative to screen width */
+    padding: 2vw;  /* Padding relative to screen width */
 }
 
 /* Button Styling */
 .dice-selection button {
-    padding: 15px;
-    font-size: 18px;
+    padding: 3vw;  /* Padding relative to screen width */
+    font-size: 4vw;  /* Font size relative to screen width */
     font-family: 'Cinzel', serif;  /* Apply custom font to buttons */
     background-color: #8B0000;  /* Blood red color */
     border: none;
-    border-radius: 8px;
+    border-radius: 2vw;  /* Border radius relative to screen width */
     color: white;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.3);
 }
 
 .dice-selection button:hover {
@@ -62,7 +62,7 @@ html, body {
 
 .dice-selection button:active {
     background-color: #800000;  /* Dark blood red on active click */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1vw 3vw rgba(0, 0, 0, 0.5);
 }
 
 /* Results section */
@@ -70,22 +70,22 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
-    margin-bottom: 20px;  /* Ensure some space below the results */
+    padding: 2vw;  /* Padding relative to screen width */
+    margin-bottom: 4vw;  /* Margin at the bottom relative to screen height */
     width: 100%;         /* Ensure results take up full width */
     overflow: hidden;    /* Hide overflow */
 }
 
 #total {
-    font-size: 25vh;
+    font-size: 25vw;  /* Font size relative to screen width */
     font-weight: bold;
     color: #ffcc00;
-    margin-bottom: 10px;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+    margin-bottom: 2vw;  /* Margin below total relative to screen width */
+    text-shadow: 0.3vw 0.3vw 0.5vw rgba(0, 0, 0, 0.7);
 }
 
 #individualResults {
-    font-size: 2vh;  /* Smaller font size to avoid overflow */
+    font-size: 3vw;  /* Font size relative to screen width */
     color: #f4f4f9;
     white-space: pre-wrap;
     line-height: 1.5;
