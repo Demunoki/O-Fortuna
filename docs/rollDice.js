@@ -22,11 +22,11 @@ const database = getDatabase(app);
 const pad = (num,count) => num.toString().padStart(count, "0");
 function getAdjustedDate(now) {
     if (now.getHours() < 3) {
-        now.setDate(now.getDate() - 1); // Move to the previous day
+        now.setDate(now.getDate() - 1);
     }
     
-    const year = now.getFullYear().toString().slice(-2); // Get last two digits of year
-    const month = pad(now.getMonth() + 1,2); // Months are 0-based
+    const year = now.getFullYear().toString().slice(-2);
+    const month = pad(now.getMonth() + 1,2); 
     const day = pad(now.getDate(),2);
 
     return `${year}-${month}-${day}`;
