@@ -18,7 +18,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app); 
-
+const session=`${Date.now()+Math.floor(Math.random()*100)}`
 const pad = (num,count) => num.toString().padStart(count, "0");
 function getAdjustedDate(now) {
     if (now.getHours() < 3) {
@@ -42,7 +42,7 @@ function getAdjustedTime(now){
 function storeRolls(rolls) {
     const now = new Date();
     console.log("Storing rolls")
-    set(ref(database, getAdjustedDate(now)+'/'+getAdjustedTime(now)), {
+    set(ref(database, getAdjustedDate(now)+'/'+session+'/'+getAdjustedTime(now)), {
         rolls: rolls
     }).then(() => {
         console.log("Data written successfully!"+now.getTime());
