@@ -18,7 +18,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app); 
-const session=`${Date.now()+Math.floor(Math.random()*100)}`
+const session=Date.now().toString()+Math.floor(Math.random()*100)
 const pad = (num,count) => num.toString().padStart(count, "0");
 function getAdjustedDate(now) {
     if (now.getHours() < 3) {
