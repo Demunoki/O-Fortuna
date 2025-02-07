@@ -11,7 +11,7 @@ const diceConfig = {
 function getARandom(dieType) {
     const config=diceConfig[dieType]
     const randomNumber = Math.floor(Math.random() * dieType) + 1;
-    const average=(config.previous.slice(1).reduce((a, b) => a + b, 0)+randomNumber)/config.numRolls;
+    const average=(config.previous.reduce((a, b) => a + b, 0)+randomNumber)/config.numRolls;
     return {randomNumber,average}
 }
 
@@ -36,7 +36,7 @@ Hooks.once("init", () => {
     
     for (const dieType in diceConfig) {
         const config = diceConfig[dieType];
-        config.previous = Array(config.numRolls).fill(config.targetAverage);
+        config.previous = Array(config.numRolls-1).fill(config.targetAverage);
     }
 
     CONFIG.Dice.fulfillment.methods["o-fortuna"] = Method
